@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fields addfieldpath="/administrator/components/com_easyjoomlabackup/models/fields">
+        <fieldset name="component">
+            <field type="krdonationcodecheck" />
+            <field name="ejbtitle_backup_process" type="ejbtitle" default="COM_EASYJOOMLABACKUP_BACKUPPROCESS" label="" description=""/>
+            <field name="exclude_files" type="textarea" value="" rows="5" cols="60" filter="raw" label="COM_EASYJOOMLABACKUP_EXCLUDEFILES" description="COM_EASYJOOMLABACKUP_EXCLUDEFILESDESC" />
+            <field name="exclude_folders" type="textarea" value="" rows="5" cols="60" filter="raw" label="COM_EASYJOOMLABACKUP_EXCLUDEFOLDERS" description="COM_EASYJOOMLABACKUP_EXCLUDEFOLDERSDESC" />
+            <field name="add_drop_statement" type="list" default="0" label="COM_EASYJOOMLABACKUP_ADDDROPSTATEMENT" description="COM_EASYJOOMLABACKUP_ADDDROPSTATEMENTDESC">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="add_db_tables" type="textarea" value="" rows="5" cols="60" filter="raw" label="COM_EASYJOOMLABACKUP_ADDDBTABLES" description="COM_EASYJOOMLABACKUP_ADDDBTABLESDESC" />
+        </fieldset>
+        <fieldset name="donation">
+            <field type="krdonationcodecheck" />
+            <field name="donation_code" type="text" default="" size="40" label="KR_DONATION_CODE" description="KR_DONATION_CODEDESC" />
+        </fieldset>
+        <fieldset name="versioncheck">
+            <field type="krdonationcodecheck" />
+            <field type="krversioncheck" name="krversioncheck" default="ejb|2.5-1" />
+            <field name="versioncheck_enable" type="list" default="1" label="KR_VERSION_CHECK" description="KR_VERSION_CHECKDESC">
+                <option value="1">KR_VERSION_CHECK_ONCESESSION</option>
+                <option value="2">KR_VERSION_CHECK_ONEVERYLOAD</option>
+                <option value="0">JNO</option>
+            </field>
+        </fieldset>
+        <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+            <field type="krdonationcodecheck" />
+            <field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" validate="rules"	filter="rules" component="com_easyjoomlabackup" section="component" />
+        </fieldset>
+    </fields>
+</config>
