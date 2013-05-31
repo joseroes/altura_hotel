@@ -11,14 +11,14 @@ class JConfig {
 	public $access = '1';
 	public $debug = '0';
 	public $debug_lang = '0';
-	public $dbtype = 'mysql';
+	public $dbtype = 'mysqli';
 	public $host = 'localhost';
 	public $user = 'alturahotel';
 	public $password = 'alturahotel';
 	public $db = 'alturahotel';
 	public $dbprefix = 'joom_';
 	public $live_site = '';
-	public $secret = '8HQoTW4IF1kHw1hi';
+	public $secret = 'H8AFAP5tEGIEyATG';
 	public $gzip = '0';
 	public $error_reporting = 'default';
 	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
@@ -26,7 +26,7 @@ class JConfig {
 	public $ftp_port = '21';
 	public $ftp_user = 'jose';
 	public $ftp_pass = 'js3d3rgz';
-	public $ftp_root = '/home/jose/proyectos/altura_hotel';
+	public $ftp_root = '/var/www/altura_hotel';
 	public $ftp_enable = '1';
 	public $offset = 'UTC';
 	public $mailer = 'mail';
