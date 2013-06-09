@@ -34,8 +34,15 @@
 		<position>menu-principal</position>
 		<position>slideshow</position>
 		<position>banner-premios</position>
+		<position>control-habitaciones</position>
+		<position>control-contenido</position>
+		<position>info</position>
 		<position>menu-habitaciones</position>
 		<position>habitacion</position>
+		<position>switches</position>
+		<position>increase-size</position>
+		<position>decrease-size</position>
+		<position>actual-size</position>
 		<position>box-1</position>
 		<position>box-2</position>
 		<position>box-3</position>

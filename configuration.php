@@ -11,7 +11,7 @@ class JConfig {
 	public $access = '1';
 	public $debug = '0';
 	public $debug_lang = '0';
-	public $dbtype = 'mysqli';
+	public $dbtype = 'mysql';
 	public $host = 'localhost';
 	public $user = 'alturahotel';
 	public $password = 'alturahotel';
@@ -40,7 +40,7 @@ class JConfig {
 	public $smtpsecure = 'none';
 	public $smtpport = '25';
 	public $caching = '0';
-	public $cache_handler = 'file';
+	public $cache_handler = 'apc';
 	public $cachetime = '15';
 	public $MetaDesc = '';
 	public $MetaKeys = '';
@@ -57,4 +57,10 @@ class JConfig {
 	public $tmp_path = '/var/www/altura_hotel/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
+	public $MetaRights = '';
+	public $sitename_pagetitles = '0';
+	public $force_ssl = '0';
+	public $feed_email = 'author';
+	public $cookie_domain = '';
+	public $cookie_path = '';
 }

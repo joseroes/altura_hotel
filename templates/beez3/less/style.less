@@ -1,21 +1,285 @@
-@blanco: '#fff';
-@negro: '@000';
-@body_background_color: '#f2f2f2';
-@box_header_background: '#52754F';
-@box_up_background_color: '#ededed';
-@box_bottom_background_color: '#e6e6e6';
-@menu: '#666666';
-@menu_habitaciones_color: "#333333";
-@banner_premios: '#4d4d4d';
+@blanco: #fff;
+@negro: #000;
+@body_background_color: #f2f2f2;
+@box_header_background: #52754F;
+@box_up_background_color: #ededed;
+@box_bottom_background_color: #e6e6e6;
+@menu: #666666;
+@menu_habitaciones_color: #333333;
+@banner_premios: #4d4d4d;
 @banner_premios_font: 'Myriad pro';
-@banner_premios_titulo: '#333333';
-@texto_boxes: '#808080';
-@footer_emphasis: "#4d4d4d";
-@footer: "#999999";
-@bottom_border_footer: "#083a04";
-@galeria_titulos: "#4b4b4d";
+@banner_premios_titulo: #333333;
+@texto_boxes: #808080;
+@footer_emphasis: #4d4d4d;
+@footer: #999999;
+@bottom_border_footer: #083a04;
+@galeria_titulos: #4b4b4d;
+@menu-active: #083a04;
+@menu-hover: #325b2e;
 
-@font_size_menu: "18px";
-@font_size_big: "16px";
-@font_size_mid: "13px";
-@font_size_small: "12px";
+@background_opacity: 75%;
+@font_size_menu: 1.125em;//"18px";
+@font_size_big: 1em;//"16px";
+@font_size_mid: 0.8125em;//"13px";
+@font_size_small: 0.75em;//"12px";
+
+@font-face{
+	font-family: "JennaSue";
+	src: url(../fonts/jenna-sue/JennaSue.ttf);
+}
+@font-face{
+	font-family: "Myriad Pro";
+	src: url(../fonts/Myriad/MYRIADPRO-REGULAR.OTF);
+}
+@font-face{
+	font-family: "Myriad pro semibold";
+	src: url(../fonts/Myriad/MYRIADPRO-SEMIBOLD.OTF);
+}
+
+.border-radius(@top: 5px, @bottom: 5px) {
+	-webkit-border-top-left-radius: @top;
+	-webkit-border-top-right-radius: @top;
+	-webkit-border-bottom-right-radius: @bottom;
+	-webkit-border-bottom-left-radius: @bottom;
+	-moz-border-radius-topleft: @top;
+	-moz-border-radius-topright: @top;
+	-moz-border-radius-bottomright: @bottom;
+	-moz-border-radius-bottomleft: @bottom;
+	border-top-left-radius: @top;
+	border-top-right-radius: @top;
+	border-bottom-right-radius: @bottom;
+	border-bottom-left-radius: @bottom;
+}
+
+body{
+	font-size: 100%;
+	background-color: @blanco;
+	font-family: @banner_premios_font;
+}
+#header{
+	position: absolute;
+	top: 0;
+	left: 3%;
+	z-index: 50;
+	background-color: rgba(255,255,255,@background_opacity);
+	width: 97%;
+	height: 110px;
+	#logo{
+		position: absolute;
+		margin: 0;
+		left: 0;
+	}
+	#line{
+		position: absolute;
+		right: 15px;
+		top: 10px;
+		#fontsize a{
+			padding: 0 !important;
+			margin-left: 10px;
+			.increase{
+				font-size: @font_size_menu;
+				font-weight: bold;
+			}
+			.decrease{
+				font-size: @font_size_small;
+			}
+			sup{
+				margin-left: -7px;
+			}
+		}
+		& > div{
+			float: right;
+			//display: inline;
+		}
+		.mod-languages{
+			margin-right: 10px;
+		}
+	}
+	.menu-principal{
+		background: transparent;
+		opacity: 100%;
+		margin-top: 75px;
+		float: right;
+		ul.menu{
+			//float: right;
+			li{
+				display: inline;
+				a{
+					color: @menu;
+					font-size: 0.9em;
+					text-transform: uppercase;
+					&:hover{
+						background-color: @menu-hover;
+						color: @blanco;
+					}
+				}
+				&.current > a, 
+				&.active > a{
+					color: @blanco;
+					background-color: @menu-active;
+					&:hover{
+						background-color: @menu-hover;
+					}
+				}
+			}
+		}
+	}
+}
+
+.principal{
+	background: transparent;
+	width: 100%;
+	height: 75%;
+	min-height: 400px;
+
+	.banner{
+		color: @banner_premios_titulo;
+		font-family: @banner_premios_font;
+		font-size: 0.85em;
+		line-height: 1em;
+		position: relative;
+		height: 51px;
+		z-index: 10;
+		background-color: rgba(255,255,255,@background_opacity);
+		width: 100%;
+		margin: 0;
+		margin-top: -65px;
+		padding: 7px 0;
+		p{
+			margin: 0 !important;
+		}
+		strong{
+			color: @banner_premios_titulo;
+			font-size: 1em;
+		}
+		ul{
+			list-style: none;
+			margin-top: 5px;
+			li{
+				display: inline;
+				padding: 0;
+				margin-right: 30px;
+			}
+		}
+		img{
+			float: left;
+			display: inline;
+			margin: -80px 10px 0 3%;
+		}
+	}
+	.menu-habitaciones{
+		position: relative;
+		height: 45px;
+		z-index: 10;
+		background-color: rgba(255,255,255,@background_opacity);
+		width: 100%;
+		margin: 0;
+		margin-top: -50px;
+		ul{
+			list-style: none;
+			margin-top: 5px;
+			li{
+				display: inline;
+				width: 33%;
+				margin-top: 5px;
+				border-right: 1px solid @banner_premios_titulo;
+				a{
+					font-family: "Myriad pro semibold";
+					font-size: 0.9em;
+					line-height: 1em;
+					color: @banner_premios_titulo;
+					text-transform: uppercase;
+					margin-left: 40px;
+					img{
+						float: right;
+						margin-top: -5px;
+						margin-right: 20px;
+					}
+				}
+				& a:hover,
+				&.current > a, 
+				&.active > a,
+				&:hover{
+					text-decoration: underline;
+					background: transparent;
+					color:  @banner_premios_titulo;
+
+				}
+			}
+		}
+	}
+}
+
+.background-div{
+  .border-radius(5px, 8px);
+  padding-top: 5px;
+  background-color: @box_header_background;
+}
+
+.box{
+	.border-radius(0px, 5px);
+	padding-bottom: 10px;
+	background-color: @box_up_background_color;
+	background-image: url("../images/background_div.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+	color: gray;
+	h2{
+		margin-bottom: 10px;
+		color: @blanco;
+		background-color: @box_header_background;
+		font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+		line-height: 15pt;
+	}
+	p,ul{
+		padding: 0 10px;
+		a{
+			color: @texto_boxes;
+			text-decoration: underline;
+  		}
+	}
+}
+
+.habitacion{
+	position: absolute;
+	top: 155px;
+	left: 2%;
+	//width: 300px;
+	.box{
+		font-size: 0.75em;
+		h2{
+			font-size: 1em;
+			padding: 0 0 5px 15px !important;
+			margin: 0;
+			margin-bottom: 10px;
+			text-transform: uppercase;
+		}
+		ul{
+			list-style-position: outside;
+		}
+		img{
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+		}
+	}
+}
+
+.contenido{
+	padding: 30px 3% 0 3%;
+	width: 94%;
+	h2{
+		font-family: "JennaSue", "Cursive", Helvetica;
+		margin-bottom: 15px;
+	}
+
+}
+
+.no-style{
+	list-style: none;
+}
+.inline{
+	display: inline;
+}

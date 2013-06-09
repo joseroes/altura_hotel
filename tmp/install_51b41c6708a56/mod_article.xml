@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+    <name>mod_article</name>
+    <creationDate>February 2009</creationDate>
+    <author>Digihaven</author>
+    <authorEmail>support@digihaven.com</authorEmail>
+    <authorUrl>www.digihaven.com</authorUrl>
+    <copyright>Copyright (c) 2009-2012 Adam Florizone. All rights reserved. Copyright (c) 2009-2012 Digihaven Technology and Design Canada. All rights reserved. </copyright>
+    <license>http://opensource.org/licenses/gpl-license.php GNU Public License </license>
+    <description>Allows you to use an Article as a Module and also support Front-end editing.&lt;br/&gt;&lt;br/&gt;
+       Don't forget to join us on Facebook &lt;a class="regbox" href="https://www.facebook.com/pages/Digihaven-Technology-Design/218793794811439?ref=ts"&gt;&lt;img src="http://www.digihaven.com/uploads/ti/install/__VERSION__/Article Module/facebookgroup_join.jpg" alt="alt" height="20"/&gt;&lt;/a&gt;! If you find this component useful consider donating.
+       &lt;br/&gt;
+       &lt;h1&gt;Help keep GPL development alive! Donate today!&lt;/h1&gt;
+       &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;a href="https://www.paypal.com/cgi-bin/webscr?amount=5.00&amp;cmd=_donations&amp;no_note=0&amp;item_name=GPL development of Article Module&amp;business=paypal@digihaven.com&amp;lc=US&amp;currency_code=USD"&gt;
+                &lt;center&gt;&lt;b&gt;$5&lt;br/&gt;
+                &lt;img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"/&gt;
+                &lt;/b&gt;&lt;/center&gt;&lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;a href="https://www.paypal.com/cgi-bin/webscr?amount=10.00&amp;cmd=_donations&amp;no_note=0&amp;item_name=GPL development of Article Module&amp;business=paypal@digihaven.com&amp;lc=US&amp;currency_code=USD"&gt;
+                &lt;center&gt;&lt;b&gt;$10&lt;br/&gt;
+                &lt;img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"/&gt;
+                &lt;/b&gt;&lt;/center&gt;&lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;a href="https://www.paypal.com/cgi-bin/webscr?amount=25.00&amp;cmd=_donations&amp;no_note=0&amp;item_name=GPL development of Article Module&amp;business=paypal@digihaven.com&amp;lc=US&amp;currency_code=USD"&gt;
+                &lt;center&gt;&lt;b&gt;$25&lt;br/&gt;
+                &lt;img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"/&gt;
+                &lt;/b&gt;&lt;/center&gt;&lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;a href="https://www.paypal.com/cgi-bin/webscr?amount=50.00&amp;cmd=_donations&amp;no_note=0&amp;item_name=GPL development of Article Module&amp;business=paypal@digihaven.com&amp;lc=US&amp;currency_code=USD"&gt;
+                &lt;center&gt;&lt;b&gt;$50&lt;br/&gt;
+                &lt;img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"/&gt;
+                &lt;/b&gt;&lt;/center&gt;&lt;/a&gt;
+            &lt;/td&gt;            
+            &lt;td&gt;
+                &lt;a href="https://www.paypal.com/cgi-bin/webscr?amount=100.00&amp;cmd=_donations&amp;no_note=0&amp;item_name=GPL development of Article Module&amp;business=paypal@digihaven.com&amp;lc=US&amp;currency_code=USD"&gt;
+                &lt;center&gt;&lt;b&gt;$100&lt;br/&gt;
+                &lt;img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"/&gt;
+                &lt;/b&gt;&lt;/center&gt;&lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;no_note=0&amp;item_name=GPL development of Article Module&amp;business=paypal@digihaven.com&amp;lc=US&amp;currency_code=USD"&gt;
+                &lt;center&gt;&lt;b&gt;Pick your amount&lt;br/&gt;
+                &lt;img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"/&gt;
+                &lt;/b&gt;&lt;/center&gt;&lt;/a&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+    </description>
+    <files>
+        <filename module="mod_article">mod_article.php</filename>
+        <filename>view.html.php</filename>
+    </files> 
+    
+    <!-- Joomla! 1.5 uses params -->
+    <params addpath="/administrator/components/com_content/elements">
+       <!-- taken from /components/com_content/views/article/tmpl/default.xml --> 
+        <param name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+        <param name="@spacer" type="spacer" default="" label="" description=""/>
+        <param name="id" type="article" default="none" label="COM_CONTENT_FIELD_SELECT_ARTICLE_LABEL" required="true" description="COM_CONTENT_FIELD_SELECT_ARTICLE_DESC"/>
+        <param name="page_title" type="text" size="30" default="" label="Page Title" description="PARAMPAGETITLE"/>
+         <param name="show_page_title" type="radio" default="1" label="Show Page Title" description="SHOW/HIDE THE PAGES TITLE">
+             <option value="0">No</option>
+             <option value="1">Yes</option>
+         </param>
+         
+         <param name="allowTemplateOveride" type="radio" default="0" label="COM_MENUS_ITEM_FIELD_CONTENT_TEMPLATE_OVERIDE_LABEL" description="COM_MENUS_ITEM_FIELD_CONTENT_TEMPLATE_OVERIDE_DESC">
+             <option value="0">No</option>
+             <option value="1">Yes</option>
+         </param>
+         
+         <param name="pageclass_sfx" type="text" size="20" default="" label="COM_MENUS_ITEM_FIELD_PAGE_CLASS_LABEL" description="COM_MENUS_ITEM_FIELD_PAGE_CLASS_DESC"/>
+
+         <field name="pathOveride" type="text" label="COM_MODULES_FIELD_PATH_TO_OVERIDE_LABEL" description="COM_MODULES_FIELD_PATH_TO_OVERIDE_DESC"/>
+        
+    </params>  
+    <params group="advanced">
+        <param name="show_title" type="list" default="" label="Show Title" description="Show/Hide the items title">
+            <option value="">Use Global</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="link_titles" type="list" default="" label="Linked Titles" description="Make your Item titles linkable">
+            <option value="">Use Global</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="show_intro" type="list" default="" label="Intro Text" description="Show/Hide the intro text">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="show_section" type="list" default="" label="Section Name" description="PARAMSECTION">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="link_section" type="list" default="" label="Section Name Linkable" description="PARAMSECTIONLINK">
+            <option value="">Use Global</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="show_category" type="list" default="" label="Category Name" description="PARAMCATEG">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="link_category" type="list" default="" label="Category Name Linkable" description="PARAMCATEGLINK">
+            <option value="">Use Global</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="show_vote" type="list" default="" label="Item Rating" description="PARAMRATING">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="show_author" type="list" default="" label="Author Names" description="PARAMAUTHOR">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="show_create_date" type="list" default="" label="Created Date and Time" description="PARAMCREATEDATE">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="show_modify_date" type="list" default="" label="Modified Date and Time" description="PARAMMODIFYDATE">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="show_pdf_icon" type="list" default="" label="PDF Icon" description="PARAMPDF">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="show_print_icon" type="list" default="" label="Print Icon" description="PARAMPRINT">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="show_email_icon" type="list" default="" label="Email Icon" description="PARAMEMAIL">
+            <option value="">Use Global</option>
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+        <param name="language" type="languages" client="site" label="Content language" description="PARAMCONTENTLANGUAGE"/>
+        <param name="keyref" type="text" size="25" default="" label="Key Reference" description="PARAMKEYREF"/>
+        <param name="readmore" type="text" size="25" default="" label="Alternative Read more text" description="PARAMALTREADMORE"/>
+    </params>
+
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_article.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_article.sys.ini</language>
+    </languages>
+
+    <!-- Joomla! 1.6 uses fieldset -->
+    <config>
+   
+    <!-- taken from /components/com_content/views/article/tmpl/default.xml --> 
+
+    <!-- Add fields to the parameters object for the layout. -->
+    <fields name="params">
+
+        <fieldset name="request" addfieldpath="/administrator/components/com_content/models/fields">
+
+            <field name="id" type="modal_article" label="COM_CONTENT_FIELD_SELECT_ARTICLE_LABEL" required="true" description="COM_CONTENT_FIELD_SELECT_ARTICLE_DESC"/>
+            
+            <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+            <field name="pathOveride" type="text" label="COM_MODULES_FIELD_PATH_TO_OVERIDE_LABEL" description="COM_MODULES_FIELD_PATH_TO_OVERIDE_DESC"/>
+
+	        <field name="allowTemplateOveride" type="radio" default="0" label="COM_MENUS_ITEM_FIELD_CONTENT_TEMPLATE_OVERIDE_LABEL" description="COM_MENUS_ITEM_FIELD_CONTENT_TEMPLATE_OVERIDE_DESC">
+	             <option value="0">No</option>
+	             <option value="1">Yes</option>
+	         </field>
+         
+        </fieldset>
+
+        <!-- Basic options. -->
+        <fieldset name="basic" label="COM_CONTENT_ATTRIBS_ARTICLE_SETTINGS_LABEL">
+
+        <field name="show_title" type="list" label="JGLOBAL_SHOW_TITLE_LABEL" description="JGLOBAL_SHOW_TITLE_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="link_titles" type="list" label="JGLOBAL_LINKED_TITLES_LABEL" description="JGLOBAL_LINKED_TITLES_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="show_intro" type="list" description="JGLOBAL_SHOW_INTRO_DESC" label="JGLOBAL_SHOW_INTRO_LABEL">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_category" type="list" label="JGLOBAL_SHOW_CATEGORY_LABEL" description="JGLOBAL_SHOW_CATEGORY_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="link_category" type="list" label="JGLOBAL_LINK_CATEGORY_LABEL" description="JGLOBAL_LINK_CATEGORY_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="show_parent_category" type="list" label="JGLOBAL_SHOW_PARENT_CATEGORY_LABEL" description="JGLOBAL_SHOW_PARENT_CATEGORY_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="link_parent_category" type="list" label="JGLOBAL_LINK_PARENT_CATEGORY_LABEL" description="JGLOBAL_LINK_PARENT_CATEGORY_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="show_author" type="list" label="JGLOBAL_SHOW_AUTHOR_LABEL" description="JGLOBAL_SHOW_AUTHOR_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="link_author" type="list" label="JGLOBAL_LINK_AUTHOR_LABEL" description="JGLOBAL_LINK_AUTHOR_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="show_create_date" type="list" label="JGLOBAL_SHOW_CREATE_DATE_LABEL" description="JGLOBAL_SHOW_CREATE_DATE_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_modify_date" type="list" label="JGLOBAL_SHOW_MODIFY_DATE_LABEL" description="JGLOBAL_SHOW_MODIFY_DATE_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_publish_date" type="list" label="JGLOBAL_SHOW_PUBLISH_DATE_LABEL" description="JGLOBAL_SHOW_PUBLISH_DATE_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_item_navigation" type="list" label="JGLOBAL_SHOW_NAVIGATION_LABEL" description="JGLOBAL_SHOW_NAVIGATION_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_vote" type="list" label="JGLOBAL_SHOW_VOTE_LABEL" description="JGLOBAL_SHOW_VOTE_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_icons" type="list" label="JGLOBAL_SHOW_ICONS_LABEL" description="JGLOBAL_SHOW_ICONS_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_print_icon" type="list" label="JGLOBAL_SHOW_PRINT_ICON_LABEL" description="JGLOBAL_SHOW_PRINT_ICON_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_email_icon" type="list" label="JGLOBAL_SHOW_EMAIL_ICON_LABEL" description="JGLOBAL_SHOW_EMAIL_ICON_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_hits" type="list" label="JGLOBAL_SHOW_HITS_LABEL" description="JGLOBAL_SHOW_HITS_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+
+        <field name="show_noauth" type="list" label="JGLOBAL_SHOW_UNAUTH_LINKS_LABEL" description="JGLOBAL_SHOW_UNAUTH_LINKS_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+        </field>
+        
+        </fieldset>
+        
+        <!-- since we dont have a menu we take settings from: /administrator/components/com_menus/models/forms/item_component.xml -->
+        <fieldset name="page-options" label="COM_MENUS_PAGE_OPTIONS_LABEL">
+
+
+            <field name="page_title" type="text" label="COM_MENUS_ITEM_FIELD_PAGE_TITLE_LABEL" description="COM_MENUS_ITEM_FIELD_PAGE_TITLE_DESC"/>
+
+            <field name="show_page_heading" type="radio" label="COM_MENUS_ITEM_FIELD_SHOW_PAGE_HEADING_LABEL" description="COM_MENUS_ITEM_FIELD_SHOW_PAGE_HEADING_DESC" default="0" filter="integer">
+                <option value="0" class="no">JNO</option>
+                <option value="1" class="yes">JYES</option>
+            </field>
+
+            <field name="page_heading" type="text" label="COM_MENUS_ITEM_FIELD_PAGE_HEADING_LABEL" description="COM_MENUS_ITEM_FIELD_PAGE_HEADING_DESC"/>
+
+            <field name="pageclass_sfx" type="text" label="COM_MENUS_ITEM_FIELD_PAGE_CLASS_LABEL" description="COM_MENUS_ITEM_FIELD_PAGE_CLASS_DESC"/>
+        </fieldset>
+    </fields>
+  
+    </config> 
+<version>2.5.2.7</version><updateservers><server type="collection" priority="2">http://www.digihaven.com/saskatoon-web-design-products/joomla-software/name-mod_article/id-7454ffb950956093da72c3125b49d0c8e17a55a5/task-update/version-2.5.2.7/updatetype-collection.xml</server><server type="extension" priority="1" name="Update Site">http://www.digihaven.com/saskatoon-web-design-products/joomla-software/name-mod_article/id-7454ffb950956093da72c3125b49d0c8e17a55a5/task-update/version-2.5.2.7/updatetype-extension.xml</server></updateservers></install>

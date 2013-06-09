@@ -56,9 +56,9 @@ function setUserOptions() {
 }
 
 function addControls() {
-	var container = document.id('fontsize');
-	var content = '<h3>'+ fontSizeTitle +'</h3><p><a title="'+ biggerTitle +'"  href="#" onclick="changeFontSize(2); return false">'+ bigger +'</a><span class="unseen">.</span><a href="#" title="'+resetTitle+'" onclick="revertStyles(); return false">'+ reset +'</a><span class="unseen">.</span><a href="#"  title="'+ smallerTitle +'" onclick="changeFontSize(-2); return false">'+ smaller +'</a></p>';
-	container.set('html', content);
+/*	var container = document.id('fontsize');
+	var content = '<p><a title="'+ biggerTitle +'"  href="#" onclick="changeFontSize(2); return false">'+ bigger +'</a><span class="unseen">.</span><a href="#" title="'+resetTitle+'" onclick="revertStyles(); return false">'+ reset +'</a><span class="unseen">.</span><a href="#"  title="'+ smallerTitle +'" onclick="changeFontSize(-2); return false">'+ smaller +'</a></p>';
+	container.set('html', content);*/
 }
 
 function saveSettings() {
@@ -67,14 +67,14 @@ function saveSettings() {
 
 
 window.addEvent('domready', function () {
-
-    smaller = Joomla.JText._('TPL_BEEZ3_SMALLER');
-    fontSizeTitle = Joomla.JText._('TPL_BEEZ3_FONTSIZE');
-    bigger = Joomla.JText._('TPL_BEEZ3_BIGGER');
-    reset = Joomla.JText._('TPL_BEEZ3_RESET');
     biggerTitle = Joomla.JText._('TPL_BEEZ3_INCREASE_SIZE');
     smallerTitle = Joomla.JText._('TPL_BEEZ3_DECREASE_SIZE');
     resetTitle = Joomla.JText._('TPL_BEEZ3_REVERT_STYLES_TO_DEFAULT');
+    /*smaller = '<img src="/altura_hotel/images/magnifier_zoom_out.png" alt="'+ smallerTitle +'" />'
+    fontSizeTitle = Joomla.JText._('TPL_BEEZ3_FONTSIZE');
+    bigger = Joomla.JText._('TPL_BEEZ3_BIGGER');
+    reset = Joomla.JText._('TPL_BEEZ3_RESET');*/
+
 
 });
 window.addEvent('domready', setUserOptions);

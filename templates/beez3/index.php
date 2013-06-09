@@ -26,20 +26,20 @@ JHtml::_('behavior.framework', true);
 // Get params
 $color				= $this->params->get('templatecolor');
 $logo				= $this->params->get('logo');
-$navposition		= $this->params->get('navposition');
-$headerImage		= $this->params->get('headerImage');
+//$navposition		= $this->params->get('navposition');
+//$headerImage		= $this->params->get('headerImage');
 $app				= JFactory::getApplication();
 $doc				= JFactory::getDocument();
 $templateparams		= $app->getTemplate(true)->params;
 $config = JFactory::getConfig();
 
-$bootstrap = explode(',', $templateparams->get('bootstrap'));
+//$bootstrap = explode(',', $templateparams->get('bootstrap'));
 $jinput = JFactory::getApplication()->input;
 $option = $jinput->get('option', '', 'cmd');
 
-$doc->addStyleSheet(JURI::base() . 'templates/' . $this->template . '/css/bootstrap-responsive.min.css', $type = 'text/css', $media = 'print');
-$doc->addStyleSheet(JURI::base() . 'templates/' . $this->template . '/css/bootstrap.min.css', $type = 'text/css', $media = 'print');
-$doc->addStyleSheet(JURI::base() . 'templates/' . $this->template . '/css/style.css', $type = 'text/css', $media = 'print');
+$doc->addStyleSheet(JURI::base() . 'templates/' . $this->template . '/css/bootstrap-responsive.min.css', $type = 'text/css');
+$doc->addStyleSheet(JURI::base() . 'templates/' . $this->template . '/css/bootstrap.min.css', $type = 'text/css');
+$doc->addStyleSheet(JURI::base() . 'templates/' . $this->template . '/css/style.css', $type = 'text/css');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/javascript/md_stylechanger.js', 'text/javascript');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/javascript/hide.js', 'text/javascript');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/javascript/respond.src.js', 'text/javascript');
@@ -64,55 +64,84 @@ $doc->addScript($this->baseurl . '/templates/' . $this->template . '/javascript/
 		<![endif]-->
 	</head>
 	<body>
-		<div id="body" class="container">
-			<header id="header">
-					<div class="logoheader">
-						<h1 id="logo">
-						<?php if ($logo) : ?>
-							<img src="<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($logo); ?>"  alt="<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>" />
-						<?php endif;?>
-						<?php if (!$logo AND $templateparams->get('sitetitle')) : ?>
-							<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>
-						<?php elseif (!$logo AND $config->get('sitename')) : ?>
-							<?php echo htmlspecialchars($config->get('sitename'));?>
-						<?php endif; ?>
-						<span class="header1">
-						<?php echo htmlspecialchars($templateparams->get('sitedescription'));?>
-						</span></h1>
-					</div><!-- end logoheader -->
+		<div id="body">
+			<div id="header">
 				<div class="menu-principal">
 					<jdoc:include type="modules" name="menu-principal" />
 				</div>
 				<div id="line">
-					<div id="fontsize"></div>
+					<div id="fontsize" class="navbar">
+						<ul class="nav">
+							<li>
+								<a title="{lang es}Aumentar tamaño{/lang}{lang en}Increase size{/lang}"  href="#" onclick="changeFontSize(2); return false"><span class="increase">A<sup><img src="<?php echo $this->baseurl ?>/images/magnifier_zoom_in.png"/></sup></span></a>
+							</li>
+							<li>
+								<a href="#" title="{lang es}Tamaño normal{/lang}{lang en}Actual size{/lang}" onclick="revertStyles(); return false">A</a>
+							</li>
+							<li>
+								<a href="#"  title="{lang es}Disminuir tamaño{/lang}{lang en}Decrease size{/lang}" onclick="changeFontSize(-2); return false"><span class="decrease">A<sup><img src="<?php echo $this->baseurl ?>/images/magnifier_zoom_out.png"/></sup></span></a></p>
+							</li>
+					</div>
+					<jdoc:include type="modules" name="switches" />
 				</div> <!-- end line -->
-			</header><!-- end header -->
+				<div id="logo">
+					<?php if ($logo) : ?>
+						<img src="<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($logo); ?>"  alt="<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>" />
+					<?php endif;?>
+					<?php if (!$logo AND $templateparams->get('sitetitle')) : ?>
+						<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>
+					<?php elseif (!$logo AND $config->get('sitename')) : ?>
+						<?php echo htmlspecialchars($config->get('sitename'));?>
+					<?php endif; ?>
+					<span class="header1">
+					<?php echo htmlspecialchars($templateparams->get('sitedescription'));?>
+					</span></h1>
+				</div><!-- end logo -->
+			</div><!-- end header -->
 			<div class="principal">
 				<?php if ($this->countModules('slideshow')){ ?>
 				<div class="slideshow-wrapper">
 					<div class="slideshow">
 						<jdoc:include type="modules" name="slideshow" />
-						<?php if($this->countModules('menu-habitaciones')){ ?>
-						<div class="habitacion">
-							<jdoc:include type="component"/>
-						</div>
-						<?php } ?>
 					</div>
-					<?php if ($this->countModules('banner-premios') ||
-							  $this->countModules('menu-habitaciones')){ ?>
-					<div class="banner">
-						<jdoc:include type="modules" name="banner-premios" />
-						<jdoc:include type="modules" name="menu-habitaciones" />
-					</div>
-					<?php } ?>
 				</div>
 				<?php } ?>
+				<?php if ($this->countModules('banner-premios')){ ?>
+				<div class="banner">
+					<jdoc:include type="modules" name="banner-premios" />
+				</div>
+				<?php 
+					} 
+					if ( $this->countModules('menu-habitaciones')){ ?>
+				<div class="menu-habitaciones">
+					<jdoc:include type="modules" name="menu-habitaciones" />
+				</div>
+				<?php if(!$this->countModules('control-contenido')){ ?>
+				<div class="habitacion">
+					<div class="span4 background-div">
+	                	<div class="box">
+	                   		<jdoc:include type="component" />
+	                	</div>
+	                </div>
+				</div>
+				<?php } ?>
+				<?php } ?>
 				<div class="contenido">
-					<?php if($this->countModules('info')){ ?>
 					<div class="info">
-
-					</div>
+					<?php if($this->countModules('control-contenido')){ ?>
+						<jdoc:include type="component" />
 					<?php } ?>
+						<jdoc:include type="modules" name="info" />
+					</div>
+				<?php if($this->countModules('box-1')){ ?>
+					<div class="boxes">
+						<div class="span4 background-div">
+		                	<div class="box">
+		                   		<jdoc:include type="component" />
+		                	</div>
+		                </div>
+					</div>
+				<?php } ?>
 				</div>
 			</div>	
 			<footer>
