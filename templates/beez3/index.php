@@ -133,15 +133,68 @@ $doc->addScript($this->baseurl . '/templates/' . $this->template . '/javascript/
 					<?php } ?>
 						<jdoc:include type="modules" name="info" />
 					</div>
-				<?php if($this->countModules('box-1')){ ?>
 					<div class="boxes">
-						<div class="span4 background-div">
-		                	<div class="box">
-		                   		<jdoc:include type="component" />
-		                	</div>
-		                </div>
+						<div class="row">
+					<?php if($this->countModules('box-1')){ ?>
+							<div class="span3 background-div">
+			                	<div class="box">
+			                   		<jdoc:include type="modules" name="box-1"/>
+			                	</div>
+			                </div>
+					<?php } ?>
+					<?php if($this->countModules('box-2')){ ?>
+							<div class="span3 background-div">
+			                	<div class="box">
+			                   		<jdoc:include type="modules" name="box-2"/>
+			                	</div>
+			                </div>
+					<?php } ?>
+					<?php if($this->countModules('box-3')){ ?>
+							<div class="span3 background-div">
+			                	<div class="box">
+			                   		<jdoc:include type="modules" name="box-3"/>
+			                	</div>
+			                </div>
+					<?php } ?>
+					<?php if($this->countModules('box-4')){ ?>
+							<div class="span3 background-div">
+			                	<div class="box">
+			                   		<jdoc:include type="modules" name="box-4"/>
+			                	</div>
+			                </div>
+					<?php } ?>
+						</div><!-- Box row 1 -->
+						<div class="row">
+					<?php if($this->countModules('box-5')){ ?>
+							<div class="span3 background-div">
+			                	<div class="box">
+			                   		<jdoc:include type="modules" name="box-5"/>
+			                	</div>
+			                </div>
+					<?php } ?>
+					<?php if($this->countModules('box-6')){ ?>
+							<div class="span3 background-div">
+			                	<div class="box">
+			                   		<jdoc:include type="modules" name="box-6"/>
+			                	</div>
+			                </div>
+					<?php } ?>
+					<?php if($this->countModules('box-7')){ ?>
+							<div class="span3 background-div">
+			                	<div class="box">
+			                   		<jdoc:include type="modules" name="box-7"/>
+			                	</div>
+			                </div>
+					<?php } ?>
+					<?php if($this->countModules('box-8')){ ?>
+							<div class="span3 background-div">
+			                	<div class="box">
+			                   		<jdoc:include type="modules" name="box-8"/>
+			                	</div>
+			                </div>
+					<?php } ?>
+						</div><!-- Boxes row 2 -->
 					</div>
-				<?php } ?>
 				</div>
 			</div>	
 			<footer>

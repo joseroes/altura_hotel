@@ -211,13 +211,13 @@ body{
 }
 
 .background-div{
-  .border-radius(5px, 8px);
+  .border-radius(5px, 25px);
   padding-top: 5px;
   background-color: @box_header_background;
 }
 
 .box{
-	.border-radius(0px, 5px);
+	.border-radius(0px, 20px);
 	padding-bottom: 10px;
 	background-color: @box_up_background_color;
 	background-image: url("../images/background_div.png");
@@ -273,6 +273,27 @@ body{
 	h2{
 		font-family: "JennaSue", "Cursive", Helvetica;
 		margin-bottom: 15px;
+	}
+	.boxes{
+		h2{
+			font-family: "Myriad Pro";
+			line-height: 0.5em;
+			font-size: 1.15em;
+			padding: 0 0 3px 1em;
+		}
+		.row{
+			margin-bottom: 30px;
+		}
+		.box{
+			.border-radius(0px, 20px);
+			font-size: 0.8em;
+			img{
+				float: left;
+				margin-right: 10px;
+				width: 25px;
+				height: 25px;
+			}
+		}
 	}
 
 }
